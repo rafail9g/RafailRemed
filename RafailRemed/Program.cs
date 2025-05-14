@@ -23,14 +23,14 @@ class Perpustakaan : Buku
         Console.Write("Masukkan Tahun Terbit  : "); b.Tahun = int.Parse(Console.ReadLine());
         Console.Write("Status (tersedia/dipinjam): "); b.Status = Console.ReadLine();
         daftarBuku.Add(b);
-        Console.WriteLine("✅ Buku berhasil ditambahkan.\n");
+        Console.WriteLine("Buku berhasil ditambahkan");
     }
 
     public void LihatBuku()
     {
         if (daftarBuku.Count == 0)
         {
-            Console.WriteLine("📚 Belum ada buku dalam perpustakaan.\n");
+            Console.WriteLine("Belum ada buku dalam perpustakaan");
             return;
         }
 
@@ -51,11 +51,11 @@ class Perpustakaan : Buku
             Console.Write("Penulis baru : "); b.Penulis = Console.ReadLine();
             Console.Write("Tahun baru   : "); b.Tahun = int.Parse(Console.ReadLine());
             Console.Write("Status baru  : "); b.Status = Console.ReadLine();
-            Console.WriteLine("Data buku berhasil diubah.");
+            Console.WriteLine("Data buku berhasil diubah");
         }
         else
         {
-            Console.WriteLine("Buku tidak ditemukan.");
+            Console.WriteLine("Buku tidak ditemukan");
         }
     }
 
@@ -84,7 +84,7 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("\n=== MENU PERPUSTAKAAN ===");
+            Console.WriteLine("MENU PERPUSTAKAAN");
             Console.WriteLine("1. Tambah Buku");
             Console.WriteLine("2. Lihat Daftar Buku");
             Console.WriteLine("3. Ubah Data Buku");
@@ -100,7 +100,7 @@ class Program
                 case "3": perpus.UbahBuku(); break;
                 case "4": perpus.HapusBuku(); break;
                 case "5": return;
-                default: Console.WriteLine("❗ Pilihan tidak tersedia.\n"); break;
+                default: Console.WriteLine("Pilihan tidak tersedia"); break;
             }
         }
     }
