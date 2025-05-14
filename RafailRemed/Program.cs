@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 
-class Buku  
+class Buku
 {
     public int ID;
     public string Judul;
@@ -10,7 +9,7 @@ class Buku
     public string Status;
 }
 
-class Perpustakaan : Buku  
+class Perpustakaan
 {
     public List<Buku> daftarBuku = new List<Buku>();
 
@@ -34,8 +33,9 @@ class Perpustakaan : Buku
             return;
         }
 
-        foreach (var b in daftarBuku)
+        for (int i = 0; i < daftarBuku.Count; i++)
         {
+            Buku b = daftarBuku[i];
             Console.WriteLine($"ID: {b.ID}, Judul: {b.Judul}, Penulis: {b.Penulis}, Tahun: {b.Tahun}, Status: {b.Status}");
         }
     }
@@ -44,16 +44,23 @@ class Perpustakaan : Buku
     {
         Console.Write("Masukkan ID buku yang ingin diubah: ");
         int id = int.Parse(Console.ReadLine());
-        var b = daftarBuku.Find(x => x.ID == id);
-        if (b != null)
+        bool ditemukan = false;
+
+        for (int i = 0; i < daftarBuku.Count; i++)
         {
-            Console.Write("Judul baru   : "); b.Judul = Console.ReadLine();
-            Console.Write("Penulis baru : "); b.Penulis = Console.ReadLine();
-            Console.Write("Tahun baru   : "); b.Tahun = int.Parse(Console.ReadLine());
-            Console.Write("Status baru  : "); b.Status = Console.ReadLine();
-            Console.WriteLine("Data buku berhasil diubah");
+            if (daftarBuku[i].ID == id)
+            {
+                Console.Write("Judul baru   : "); daftarBuku[i].Judul = Console.ReadLine();
+                Console.Write("Penulis baru : "); daftarBuku[i].Penulis = Console.ReadLine();
+                Console.Write("Tahun baru   : "); daftarBuku[i].Tahun = int.Parse(Console.ReadLine());
+                Console.Write("Status baru  : "); daftarBuku[i].Status = Console.ReadLine();
+                Console.WriteLine("Data buku berhasil diubah");
+                ditemukan = true;
+                break;
+            }
         }
-        else
+
+        if (!ditemukan)
         {
             Console.WriteLine("Buku tidak ditemukan");
         }
@@ -63,13 +70,20 @@ class Perpustakaan : Buku
     {
         Console.Write("Masukkan ID buku yang ingin dihapus: ");
         int id = int.Parse(Console.ReadLine());
-        var b = daftarBuku.Find(x => x.ID == id);
-        if (b != null)
+        bool ditemukan = false;
+
+        for (int i = 0; i < daftarBuku.Count; i++)
         {
-            daftarBuku.Remove(b);
-            Console.WriteLine("Buku berhasil dihapus.");
+            if (daftarBuku[i].ID == id)
+            {
+                daftarBuku.RemoveAt(i);
+                Console.WriteLine("Buku berhasil dihapus.");
+                ditemukan = true;
+                break;
+            }
         }
-        else
+
+        if (!ditemukan)
         {
             Console.WriteLine("Buku tidak ditemukan.");
         }
@@ -84,7 +98,7 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("MENU PERPUSTAKAAN");
+            Console.WriteLine("\nMENU PERPUSTAKAAN");
             Console.WriteLine("1. Tambah Buku");
             Console.WriteLine("2. Lihat Daftar Buku");
             Console.WriteLine("3. Ubah Data Buku");
