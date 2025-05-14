@@ -60,7 +60,7 @@ class Perpustakaan
             }
         }
 
-        if (!ditemukan)
+        if (ditemukan)
         {
             Console.WriteLine("Buku tidak ditemukan");
         }
@@ -83,7 +83,7 @@ class Perpustakaan
             }
         }
 
-        if (!ditemukan)
+        if (ditemukan)
         {
             Console.WriteLine("Buku tidak ditemukan.");
         }
