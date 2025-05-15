@@ -60,10 +60,6 @@ class Perpustakaan
             }
         }
 
-        if (ditemukan)
-        {
-            Console.WriteLine("Buku tidak ditemukan");
-        }
     }
 
     public void HapusBuku()
@@ -83,10 +79,6 @@ class Perpustakaan
             }
         }
 
-        if (ditemukan)
-        {
-            Console.WriteLine("Buku tidak ditemukan.");
-        }
     }
 }
 
