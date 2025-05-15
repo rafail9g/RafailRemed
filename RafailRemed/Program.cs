@@ -72,7 +72,7 @@ class Perpustakaan
         {
             if (daftarBuku[i].ID == id)
             {
-                daftarBuku.Remove(i);
+                daftarBuku.Remove(daftarBuku[i]);
                 Console.WriteLine("Buku berhasil dihapus.");
                 ditemukan = true;
                 break;
@@ -90,7 +90,7 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("\nMENU PERPUSTAKAAN");
+            Console.WriteLine("MENU PERPUSTAKAAN");
             Console.WriteLine("1. Tambah Buku");
             Console.WriteLine("2. Lihat Daftar Buku");
             Console.WriteLine("3. Ubah Data Buku");
