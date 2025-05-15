@@ -72,7 +72,7 @@ class Perpustakaan
         {
             if (daftarBuku[i].ID == id)
             {
-                daftarBuku.RemoveAt(i);
+                daftarBuku.Remove(i);
                 Console.WriteLine("Buku berhasil dihapus.");
                 ditemukan = true;
                 break;
