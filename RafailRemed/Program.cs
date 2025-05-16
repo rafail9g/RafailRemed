@@ -1,12 +1,16 @@
 using System;
 
-class Buku
+class InventarisPerpustakaan
 {
     public int ID;
-    public string Judul;
-    public string Penulis;
-    public int Tahun;
     public string Status;
+}
+
+class Buku : InventarisPerpustakaan
+{
+    public string Penulis;
+    public string Judul;
+    public int Tahun;
 }
 
 class Perpustakaan
@@ -59,7 +63,6 @@ class Perpustakaan
                 break;
             }
         }
-
     }
 
     public void HapusBuku()
@@ -78,9 +81,9 @@ class Perpustakaan
                 break;
             }
         }
-
     }
 }
+
 
 class Program
 {
@@ -91,6 +94,7 @@ class Program
         while (true)
         {
             Console.WriteLine("MENU PERPUSTAKAAN");
+            Console.WriteLine("      Pargia     ");
             Console.WriteLine("1. Tambah Buku");
             Console.WriteLine("2. Lihat Daftar Buku");
             Console.WriteLine("3. Ubah Data Buku");
